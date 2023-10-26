@@ -1,0 +1,498 @@
+<body>
+
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    </head>
+
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        {{>header}}
+        {{>sidebar}}
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                <h4 class="mb-sm-0">Add Agent</h4>
+
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
+                                        <li class="breadcrumb-item active">Add Agent </li>
+                                    </ol>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="card">
+                                <div class="card-header align-items-center d-flex">
+                                    <h4 class="card-title mb-0 flex-grow-1">Add Agent</h4>
+                                </div>
+                                <!-- end card header -->
+                                <div class="card-body">
+                                    <div id="customerList">
+                                        <div class="row g-4 mb-3">
+                                            <div class="col-sm-auto">
+                                                <div>
+                                                    <button type="button" class="btn btn-success add-btn"
+                                                        data-bs-toggle="modal" id="create-btn"
+                                                        data-bs-target="#showModal"><i
+                                                            class="ri-add-line align-bottom me-1"></i> Add
+                                                        Agent</button>
+                                                    {{!-- <button class="btn btn-soft-danger"
+                                                        onClick="deleteMultiple()"><i
+                                                            class="ri-delete-bin-2-line"></i></button> --}}
+                                                </div>
+                                            </div>
+                                            <div class="col-sm">
+                                                <div class="d-flex justify-content-sm-end">
+                                                    <div class="search-box ms-2">
+                                                        <input type="text" class="form-control search"
+                                                            placeholder="Search...">
+                                                        <i class="ri-search-line search-icon"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="table-responsive table-card mt-3 mb-1">
+                                            <table class="table align-middle table-nowrap" id="customerTable">
+                                                <thead class="table-light">
+                                                    <tr style="text-align: center;">
+                                                        <th scope="col" style="width: 50px;">
+
+                                                        </th>
+                                                        <th class="sort" data-sort="category">First Name</th>
+
+                                                        <th class="sort" data-sort="category">Last Name</th>
+                                                        <th class="sort" data-sort="category">Phone Number</th>
+                                                        <th class="sort" data-sort="category">GST Number</th>
+                                                       <th class="sort" data-sort="category">Email</th>
+                                                        <th class="sort" data-sort="category">City</th>
+
+
+
+
+
+
+
+                                                        {{!-- <th class="sort" data-sort="status">Status</th> --}}
+
+                                                        <th data-sort="action">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="list form-check-all">
+                                                    {{#each getagent}}
+                                                        <tr style="text-align: center;">
+                                                            <th scope="row">
+
+                                                            </th>
+
+                                                        <tr style="text-align: center;">
+                                                            <th scope="row">
+
+                                                            </th>
+
+                                                            <td class="category">
+                                                                <div class="flex-grow-1">
+                                                                    {{this.firstname}}
+                                                                </div>
+
+                                                            </td>
+                                                            <td class="category">
+                                                                <div class="flex-grow-1">
+                                                                    {{this.lastname}}
+                                                                </div>
+                                                            </td>
+                                                            </td>
+                                                            <td class="category">
+                                                                <div class="flex-grow-1">
+                                                                    {{this.phonenumber}}
+                                                                </div>
+                                                            </td> 
+                                                                <td class="category">
+                                                                <div class="flex-grow-1">
+                                                                    {{this.gst}}
+                                                                </div>
+                                                            </td>
+
+ <td class="category">
+                                                                <div class="flex-grow-1">
+                                                                    {{this.email}}
+                                                                </div>
+                                                            </td>
+                                                             <td class="category">
+                                                                <div class="flex-grow-1">
+                                                                    {{this.city}}
+                                                                </div>
+                                                            </td>
+
+
+
+
+
+                                                            {{!-- {{#ifstatus status}}
+                                                        <td><span class="badge bg-success">{{status}}</span></td>
+                                                        {{else}}
+                                                        <td><span class="badge bg-danger">{{status}}</span></td>
+                                                        {{/ifstatus}} --}}
+                                                            <td style="text-align:center ;">
+                                                                <div class="gap-2"
+                                                                    style="justify-content: center; display:inline-flex;">
+                                                                    <div class="edit">
+                                                                        <a href="/editagent/{{this.id}}"
+                                                                            class="btn btn-primary" >
+                                                                            <i class="fas fa-edit"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="remove">
+                                                                        <button
+                                                                            class="btn btn-primary"
+                                                                            data-bs-toggle="modal"
+                                                                            data-bs-target="#deleteRecordModal{{this.id}}">
+                                                                            <i class="fas fa-trash-alt"></i>
+                                                                        </button>
+
+                                                                        <a href="" </div>
+                                                                            <button type="submit"
+                                                                                class="btn btn-sm btn-soft-success edit-list"
+                                                                                id="searchbutton">
+                                                                                <a
+                                                                                    href="/agentdetail/detail/{{this.id}}">
+                                                                                    <i
+                                                                                        class="ri-eye-fill align-bottom"></i>
+                                                                                </a>
+                                                                            </button>
+                                                                            <button
+                                                                                class="btn btn-sm btn-info create-invoice-btn ">
+                                                                                <a  style="color: white;" href="/createinvoice/{{this.id}}">Create
+                                                                                    Invoice</a>
+                                                                            </button>
+                                                                    </div>
+                                                            </td>
+                                                        </tr>
+                                                    {{/each}}
+
+                                                </tbody>
+                                            </table>
+                                            <div class="noresult" style="display: none">
+                                                <div class="text-center">
+                                                    <lord-icon src="https://cdn.lordicon.com/msoeawqm.json"
+                                                        trigger="loop" colors="primary:#121331,secondary:#08a88a"
+                                                        style="width:75px;height:75px"></lord-icon>
+                                                    <h5 class="mt-2">Sorry! No Result Found</h5>
+                                                    {{!-- <p class="text-muted mb-0">We've searched more than 150+
+                                                        Orders We
+                                                        did not find any orders for you search.</p> --}}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex justify-content-end">
+                                            <div class="pagination-wrap hstack gap-2">
+                                                <a class="page-item pagination-prev disabled" href="#">
+                                                    Previous
+                                                </a>
+                                                <ul class="pagination listjs-pagination mb-0"></ul>
+                                                <a class="page-item pagination-next" href="#">
+                                                    Next
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end card-body -->
+                            </div>
+                            <!-- end card -->
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!--end row-->
+                    <div class="modal fade" id="showModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header bg-light p-3">
+                                    <h5 class="modal-title" id="exampleModalLabel">Add Agent</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                        id="close-modal"></button>
+                                </div>
+                                <form action="/talab/addagent/add-agent" method="post">
+                                    <div class="modal-body">
+
+                                        {{!-- <div class="mb-3" id="modal-id" style="display: none;">
+                                            <label for="id-field" class="form-label">ID</label>
+                                            <input type="text" id="id-field" class="form-control" placeholder="ID"
+                                                readonly />
+                                        </div> --}}
+
+
+                                        <div class="mb-3">
+                                            <label for="customername-field" class="form-label">First Name</label>
+                                            <input type="text" name="firstname" id="category-field" class="form-control"
+                                                placeholder="Enter First name" style="width: 300px;" />
+                                        </div>
+
+
+
+
+
+
+                                        <div class="mb-3">
+                                            <label for="customername-field" class="form-label">Last Name</label>
+                                            <input type="text" name="lastname" id="category-field" class="form-control"
+                                                placeholder="Enter last name" style="width:300px;" />
+                                        </div>
+                                            <div class="mb-3">
+                                            <label for="customername-field" class="form-label">Email</label>
+                                            <input type="text" name="email" id="category-field" class="form-control"
+                                                placeholder="Enter Email" style="width:300px;" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="customername-field" class="form-label">Address</label>
+                                            <input type="text" name="address" id="category-field" class="form-control"
+                                                placeholder="Enter address" style="width: 300px;" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="customername-field" class="form-label">Phone number</label>
+                                            <input type="text" name="phonenumber" id="category-field"
+                                                class="form-control" placeholder="Enter address"
+                                                style="width: 300px;;" />
+                                        </div>
+                                           <div class="mb-3">
+                                            <label for="customername-field" class="form-label">GST number</label>
+                                            <input type="text" name="gst" id="category-field"
+                                                class="form-control" placeholder="Enter GST number"
+                                                style="width: 300px;;" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="customername-field" class="form-label">City</label>
+                                            <input type="text" name="city" id="category-field"
+                                                class="form-control" placeholder="Enter city"
+                                                style="width: 300px;;" />
+                                        </div>
+                         <div>
+    <label for="customername-field" class="form-label">Service Charge</label>
+    <div class="d-flex align-items-center">
+        <div id="country-fields-container">
+            <!-- Initial Field with Country Dropdown -->
+            <div class="country-price-field">
+                <div class="main_select_country_box">
+                    <select name="country[]" class="form-select">
+                        <option value="">Select a country</option>
+                    </select>
+                </div>
+                <div class="price-input">
+                    <input type="text" name="price[]" placeholder="Enter price" class="form-control" />
+                    <!-- Delete Icon (Dustbin) for Each Field -->
+           
+                </div>
+            </div>
+        </div>
+        <div class="add-field_btn">
+            <button type="button" id="add-country-field" class="btn ms-2 add_btn" style="width: 30px; display: none;">
+                <i class="fa-solid fa-plus" style="color: #000000;"></i>
+           
+        </div>
+    </div>
+</div>
+
+
+                                        <div>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div class="hstack gap-2 justify-content-end">
+                                                <button type="button" class="btn btn-light"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                {{!-- <button type="submit" class="btn btn-success" id="add-btn">Add
+                                                Customer</button> --}}
+                                                <button type="submit" class="btn btn-success"
+                                                    id="edit-btn">Submit</button>
+                                            </div>
+                                        </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Modal -->
+
+    {{#each getagent}}
+        <div class="modal fade zoomIn" id="deleteRecordModal{{this.id}}" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                            id="btn-close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mt-2 text-center">
+                            <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop"
+                                colors="primary:#f7b84b,secondary:#f06548" style="width:100px;height:100px">
+                            </lord-icon>
+                            <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
+                                <h4>Are you Sure ?</h4>
+                                <p class="text-muted mx-4 mb-0">Are you Sure You want to Remove this Record
+                                    ?</p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
+                            <button type="button" class="btn w-sm btn-light" data-bs-dismiss="modal">Close</button>
+                            <form action="/talab/addagent/agentdele/{{this.id}}" method="post">
+                                <input id="searchmethod" name="_id" type="hidden" value={{_id}} />
+                                <button type="submit" class="btn w-sm btn-danger " id="delete-record">Yes,
+                                    Delete It!
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+    <!--end modal -->
+
+    </div>
+    <!-- container-fluid -->
+    </div>
+    <!-- End Page-content -->
+
+    {{>footer}}
+    </div>
+    <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    <!--start back-to-top-->
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script type="text/javascript">
+    var countryCounter = 1;
+
+    // Function to create a new field with a country dropdown and price input
+    function createNewField() {
+        var newField = `
+            <div class="country-price-field">
+                <div class="main_select_country_box">
+                    <select name="country[]" class="form-select">
+                        <option value="">Select a country</option>
+                    </select>
+                </div>
+                <div class="price-input input-group">
+                    <input type="text" name="price[]" placeholder="Enter price" class="form-control" />
+                    <button type="button" class="btn btn-outline-danger remove-field input-group-text">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+        `;
+
+        return newField;
+    }
+
+    // Function to toggle the visibility of the "Add Field" button and "Delete" buttons
+    function toggleButtonVisibility() {
+        const countrySelects = $("#country-fields-container select[name='country[]']");
+        const priceInputs = $("#country-fields-container input[name='price[]']");
+        const addButtons = $(".add-field_btn button.add_btn");
+        const removeButtons = $(".add-field_btn button.remove-field");
+
+        // Check if all select and input fields have non-empty values
+        const allFieldsFilled = countrySelects.toArray().every(select => select.value !== "") &&
+            priceInputs.toArray().every(input => input.value !== "");
+
+        if (allFieldsFilled) {
+            addButtons.show(); // Show the "Add Field" buttons when fields are filled
+            removeButtons.hide(); // Hide all "Delete" buttons
+        } else {
+            addButtons.hide(); // Hide the "Add Field" buttons
+            removeButtons.show(); // Show the "Delete" buttons for filled fields
+        }
+    }
+
+    // Fetch country data for the initial dropdown
+    const initialCountrySelect = $("#country-fields-container").find(".country-price-field select").first();
+    fetch('https://restcountries.com/v3.1/all')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(country => {
+                const option = document.createElement('option');
+                option.value = country.name.common;
+                option.text = country.name.common;
+                initialCountrySelect.append(option);
+            });
+        })
+        .catch(error => console.error('Error fetching countries:', error));
+
+    $("#add-country-field").click(function () {
+        var newFieldHTML = createNewField();
+        $("#country-fields-container").append(newFieldHTML);
+
+        // Fetch country data for the newly created dropdown
+        const newCountrySelect = $("#country-fields-container").find(".country-price-field select").last();
+        fetch('https://restcountries.com/v3.1/all')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(country => {
+                    const option = document.createElement('option');
+                    option.value = country.name.common;
+                    option.text = country.name.common;
+                    newCountrySelect.append(option);
+                });
+            })
+            .catch(error => console.error('Error fetching countries:', error));
+
+        countryCounter++;
+        toggleButtonVisibility();
+    });
+
+    // Use event delegation to handle the click events for the "Delete" buttons
+    $(document).on('click', '.remove-field', function () {
+        $(this).closest('.country-price-field').remove();
+        countryCounter--;
+        toggleButtonVisibility();
+    });
+
+    // Monitor input fields for changes and toggle button visibility accordingly
+    $("#country-fields-container").on('change', 'select[name="country[]"], input[name="price[]"]', function () {
+        toggleButtonVisibility();
+    });
+</script>
+
+
+
+
+
+</html>

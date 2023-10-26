@@ -1,0 +1,1871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jura:wght@300&display=swap" rel="stylesheet">
+        
+            <link rel="stylesheet" href="path/to/font-awesome/css/all.min.css">
+
+        <link rel="stylesheet" href="./app.css" />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <style>
+        @media print {
+            @page {
+                size: 350mm 500mm;
+                margin: 15mm 15mm 15mm 15mm;
+            }
+
+            html {
+                /* background: #dce7fb; */
+                -webkit-print-color-adjust: exact;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            .Communication_div {
+                width: 25%;
+                font-size: 17px;
+                font-weight: 600;
+            }
+
+            .Communication_data_div {
+                width: 75%;
+            }
+
+            .Courier_div {
+                width: 15%;
+                font-size: 17px;
+                font-weight: 600;
+            }
+
+            .Courier_data_div {
+                width: 85%;
+            }
+
+            .Other_div {
+                width: 15%;
+                font-size: 17px;
+                font-weight: 600;
+            }
+
+            .Other_data_div {
+                width: 85%;
+            }
+
+            .Rupees_div {
+                width: 8%;
+                font-size: 17px;
+                font-weight: 600;
+            }
+
+            .Rupees_data_div {
+                width: 92%;
+            }
+
+            .main-div-of-all {
+                width: 95%;
+
+                border: 1px solid black;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .main-logo-txt-div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+            }
+
+            .form-main-div {
+                padding: 2rem 0rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .main-header-div {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: row;
+                /* border: 1px solid; */
+                /* border-bottom: none;  */
+            }
+
+            .main-body-div {
+                width: 100%;
+                /* display: flex;justify-content: space-between;align-items: center;flex-direction: row; */
+                /* border: 1px solid; */
+                /* border-bottom: none; */
+            }
+
+            .div-of-two-txt {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .main-div-of-details {
+                padding: 9px;
+            }
+
+            .main-hr-div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                /* flex-direction: c; */
+            }
+
+            .hr {
+                width: 100%;
+                border: 2px solid black;
+            }
+
+            .add-txt-main-div {
+                padding: 5px;
+                letter-spacing: 2 px;
+            }
+
+            .main-div-of-name {
+                width: 59.5%;
+                height: 60px;
+                display: flex;
+                padding: 10px;
+                align-items: flex-end;
+                justify-content: left;
+                flex-direction: row;
+                gap: 1rem;
+            }
+
+            .div-of-input-1 {
+                /* border: 1px solid black;
+      border-left: none;
+      border-top: none;
+      border-right: none; */
+                border-bottom: 1px solid black;
+                width: 100%;
+                height: 15px;
+            }
+
+            .div-of-input-2 {
+                border-bottom: 1px solid black;
+                width: 100%;
+                height: 15px;
+            }
+
+            .main-div-of-input {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                /* align-items: center; */
+                /* justify-contfon: column; */
+            }
+
+            .txt-div {
+                text-align: center;
+            }
+
+            .main-div-of-name-bill-no {
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                flex-direction: row;
+                width: 100%;
+                border-left: 0;
+                border-right: 0;
+            }
+
+            .main-div-of-bill-date {
+                padding: 13px;
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .bill-no-main-div {
+                gap: 1rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+            }
+
+            .date-main-div {
+                gap: 33px;
+                display: flex;
+                justify-content: center;
+                /* align-items: center; */
+                flex-direction: row;
+            }
+
+            .khadi-line {
+                border: 1px solid black;
+                height: 76px;
+            }
+
+            .current-date {
+                border-bottom: 1px solid #000;
+                width: 150px;
+            }
+
+            .body-table-parent {
+                border: 2px solid black;
+                width: 100%;
+                height: max-content;
+                display: flex;
+                /* justify-content: center; */
+                /* align-items: center; */
+                flex-direction: row;
+            }
+
+            .body-table-right-parent> :nth-child(1)> :nth-child(1) {
+                width: 70%;
+                border-right: 1px solid black !important;
+                border-bottom: 2px solid black !important;
+
+                height: 50px;
+            }
+
+            .body-table-right-parent> :nth-child(1)> :nth-child(2) {
+                width: 30%;
+                border-left: 1px solid black !important;
+                border-bottom: 2px solid black !important;
+                height: 50px;
+            }
+
+            .body-table-right-parent> :nth-child(1) {
+                height: 50px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .body-table-right-parent> :nth-child(2) {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .body-table-right-parent> :nth-child(2)> :nth-child(1) {
+                width: 70%;
+                height: 100%;
+                border-right: 1px solid black !important;
+            }
+
+            .body-table-right-parent> :nth-child(2)> :nth-child(2) {
+                width: 30%;
+                border-left: 1px solid black !important;
+                height: 100%;
+            }
+
+            .body-table-right-parent> :nth-child(3) {
+                height: 50px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            /* .body-table-right-parent > :nth-child(3) > :nth-child(1) {
+        width: 70%;
+        border-right: 1px solid black !important;
+        border-top: 2px solid black !important;
+        height: 50px;
+      } */
+            .body-table-right-parent> :nth-child(3)> :nth-child(1) {
+                width: 70%;
+                border-right: 1px solid black !important;
+                border-top: 2px solid black !important;
+                height: 50px;
+                padding: 1rem;
+                text-align: end;
+            }
+
+            .body-table-right-parent> :nth-child(3)> :nth-child(2) {
+                width: 30%;
+                border-left: 1px solid black !important;
+                border-top: 2px solid black !important;
+                height: 50px;
+            }
+
+            .body-table-left {
+                padding: 1rem 2rem;
+                width: 75%;
+                height: 100%;
+                border-right: 1px solid black;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+
+            .body-table-left-1 {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 2rem;
+            }
+
+            .body-table-left-2 {
+                width: 100%;
+                height: auto;
+            }
+
+            .ek-down-ek {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 0.6rem;
+            }
+
+            .body-table-right {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+            }
+
+            .body-table-right-div-1 {
+                text-align: end;
+                width: 80%;
+                height: 100%;
+                border-right: 2px solid black;
+            }
+
+            .body-table-right-div-1>span {
+                padding-right: 1rem;
+                font-size: 24px;
+            }
+
+            .body-table-right-div-2 {
+                width: 20%;
+                height: 100%;
+            }
+
+            .body-table-right-div--head {
+                width: 100%;
+                height: 60px;
+                border-bottom: 2px solid black;
+            }
+
+            .body-table-right-parent {
+                display: flex;
+                width: 25%;
+
+                flex-direction: column;
+                justify-content: space-between;
+                /* gap: 10rem; */
+                /* border: 1px solid green;÷ */
+                align-items: center;
+            }
+
+            .body-left-passengers-div-head {
+                font-weight: 600;
+                width: 100%;
+                font-size: 18px;
+            }
+
+            .body-left-passengers-div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+                height: auto;
+                gap: 0.5rem;
+                /* padding: 2rem; */
+            }
+
+            .body-left-passengers-div-content-repeat {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                flex-direction: row;
+                gap: 0.5rem;
+            }
+
+            .bhai-yaha-data-ayega-gst-wala {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                /* gap: 16rem; */
+                width: 100%;
+                height: 24px;
+                border-bottom: 1px solid black;
+            }
+
+            .bhai-yaha-data-ayega-name-wala {
+                display: flex;
+                flex-direction: row;
+                /* gap: 16rem; */
+                width: 100%;
+                min-height: 24px;
+                height: auto;
+                border-bottom: 1px solid black;
+                position: relative;
+            }
+
+            .bhai-yaha-data-ayega-name-wala-1 {
+                width: 60%;
+                height: 15px;
+                /* border-bottom: 1px solid black; */
+            }
+
+            .bhai-yaha-data-ayega-name-wala-2 {
+                width: 20%;
+                height: 15px;
+                /* border-bottom: 1px solid black; */
+            }
+
+            .bhai-yaha-data-ayega-name-wala-3 {
+                width: 20%;
+                height: 15px;
+            }
+
+            .bhai-yaha-data-ayega-name-wala-passenger-1 {
+                width: 100%;
+                height: 15px;
+            }
+
+            .bhai-yaha-data-ayega-name-wala-passenger-2 {
+                width: 40%;
+                height: 15px;
+            }
+
+            .bhai-yaha-data-ayega-name-wala-price {
+                width: 90%;
+                height: 24px;
+                font-size: 20px;
+            }
+
+            .body-left-passengers-div-content-repeat>span>span {
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+            .body-left-passengers-div-content {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 0.6rem;
+            }
+
+            .body-left-passengers-div-content-price {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                flex-direction: column;
+                gap: 0.6rem;
+                text-align: end;
+            }
+
+            .body-table-right-bottom {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 120px;
+            }
+
+            .main-div-of-line {
+                display: flex;
+                /* justify-content: center;
+    align-items: center; */
+                flex-direction: row;
+            }
+
+            .div-of-line-1 {
+                border-bottom: 1px solid #000;
+                width: 900px;
+            }
+
+            .div-of-line-2 {
+                border-bottom: 1px solid #000;
+                width: 805px;
+            }
+
+            .div-of-line-3 {
+                border-bottom: 1px solid #000;
+                width: 757px;
+            }
+
+            .div-of-line-4 {
+                border-bottom: 1px solid #000;
+                width: 800px;
+            }
+
+            .second-div-main {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .second-heading {
+                width: 95px;
+                font-size: 13px;
+                font-weight: 900;
+            }
+
+            .first-heading {
+                /* width: 95px; */
+                font-size: 13px;
+                font-weight: 900;
+            }
+
+            .comm-txt {
+                font-size: 13px;
+                font-weight: 900;
+            }
+
+            .third-div-main {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .main-div-of-communication {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .body-left-visa-charges-parent-div {
+                /* border: 1px solid lime; */
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                flex-direction: row;
+                gap: 0.6rem;
+            }
+
+            .body-left-visa-charges-parent-div-price {
+                /* border: 1px solid lime; */
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .body-left-visa-charges-1 {
+                font-size: 18px;
+                font-weight: 600;
+                width: 25%;
+                height: auto;
+            }
+
+            .body-left-visa-charges-2 {
+                width: 75%;
+                height: auto;
+            }
+
+            .body-left-visa-content-repeat>span>span {
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+            .body-left-visa-content-repeat {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 0.6rem;
+            }
+
+            .body-left-rightDash-parent-div {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                flex-direction: row;
+                gap: 0.6rem;
+            }
+
+            .Grand-Total-txt-div {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                font-size: 24px;
+                font-weight: 600;
+            }
+
+            .terms-condition-main-div {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 95%;
+            }
+
+            .div-of-left-side {
+                padding-top: 8px;
+                width: 80%;
+                display: flex;
+                gap: 1rem;
+                justify-content: left;
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .terms-of-payment-txt {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+            }
+
+            .terms-of-payment-txt-detail {
+                width: 60%;
+            }
+
+            .div-of-right-side {
+                /* border: 1px solid lime; */
+                padding-top: 8px;
+                width: 20%;
+                display: flex;
+                gap: 1rem;
+                /* justify-content: left; */
+                /* align-items: flex-start; */
+                flex-direction: column;
+            }
+
+            .first-txt {
+                text-align: end;
+            }
+
+            .scnd-txt {
+                width: 90%;
+                text-align: center;
+            }
+
+            .third-txt {
+                text-align: end;
+            }
+
+            .frst-data {
+                display: flex;
+                position: absolute;
+                top: 20%;
+                right: 10px;
+                flex-direction: column;
+                gap: 14px;
+            }
+
+            .scnd-data {
+                display: flex;
+                position: absolute;
+                top: 50.54%;
+                right: 10px;
+                flex-direction: column;
+                gap: 14px;
+            }
+
+            .frst-scnd-data {
+                position: relative;
+            }
+
+            .img-div {
+                width: 100px;
+                height: 70px;
+                display: grid;
+                place-items: center;
+                overflow: hidden;
+                /* background-color: blue; */
+            }
+
+            .img-div>img {
+                width: 70%;
+                aspect-ratio: 3/2;
+                object-fit: cover;
+            }
+
+            .main-logo-txt-div {
+                padding-top: 10px;
+                padding-left: 10px;
+            }
+
+            .name_title_text {
+                height: 100%;
+            }
+
+            .name_teg {
+                padding-bottom: 5px;
+                font-size: 15px;
+            }
+
+            .position-right-me-lene-ka-hai {
+                position: absolute;
+                right: -300px;
+            }
+
+            .position-right-me-lene-ka-hai-part-2 {
+                position: absolute;
+                right: -205px;
+            }
+        }
+
+        /* ===================================Normal Css=============================================== */
+
+        @media screen {
+            .name_title_text {
+                height: 100%;
+            }
+
+            .img-div {
+                width: 150px;
+                height: 105px;
+                overflow: hidden;
+                /* background-color: blue; */
+            }
+
+            .img-div>img {
+                width: 100%;
+                aspect-ratio: 3/2;
+                object-fit: cover;
+            }
+
+            @page {
+                size: 350mm 500mm;
+                margin: 15mm 15mm 15mm 15mm;
+            }
+
+            html {
+                /* background: #dce7fb; */
+                -webkit-print-color-adjust: exact;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            .Communication_div {
+                width: 15%;
+                font-size: 17px;
+                font-weight: 600;
+            }
+
+            .Communication_data_div {
+                width: 85%;
+            }
+
+            .Courier_div {
+                width: 10%;
+                font-size: 17px;
+                font-weight: 600;
+            }
+
+            .Courier_data_div {
+                width: 90%;
+            }
+
+            .Other_div {
+                width: 9%;
+                font-size: 17px;
+                font-weight: 600;
+            }
+
+            .Other_data_div {
+                width: 91%;
+            }
+
+            .Rupees_div {
+                width: 4%;
+                font-size: 17px;
+                font-weight: 600;
+            }
+
+            .Rupees_data_div {
+                width: 96%;
+            }
+
+            .main-div-of-all {
+                width: 95%;
+                /* padding: 20px; */
+                border: 1px solid black;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .main-logo-txt-div {
+                padding-top: 10px;
+                padding-left: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+            }
+
+            .form-main-div {
+                padding: 1rem 0rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .main-header-div {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: row;
+                /* border: 1px solid; */
+                /* border-bottom: none;  */
+            }
+
+            .main-body-div {
+                width: 100%;
+                /* display: flex;justify-content: space-between;align-items: center;flex-direction: row; */
+                /* border: 1px solid; */
+                /* border-bottom: none; */
+            }
+
+            .div-of-two-txt {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .main-div-of-details {
+                padding: 9px;
+            }
+
+            .main-hr-div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                /* flex-direction: c; */
+            }
+
+            .hr {
+                width: 100%;
+                border: 2px solid black;
+            }
+
+            .add-txt-main-div {
+                padding: 5px;
+                letter-spacing: 2 px;
+            }
+
+            .main-div-of-name {
+                width: 59.5%;
+                height: 60px;
+
+                display: flex;
+                padding: 10px;
+                align-items: flex-end;
+                justify-content: left;
+                flex-direction: row;
+                gap: 1rem;
+            }
+
+            .div-of-input-1 {
+                /* border: 1px solid black;
+      border-left: none;
+      border-top: none;
+      border-right: none; */
+                border-bottom: 1px solid black;
+                width: 100%;
+                height: 20px;
+                padding-bottom: 5px;
+            }
+
+            .name_teg {
+                padding-bottom: 5px;
+                font-size: 15px;
+            }
+
+            .div-of-input-2 {
+                border-bottom: 1px solid black;
+                width: 100%;
+                height: 15px;
+            }
+
+            .main-div-of-input {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                /* align-items: center; */
+                /* justify-contfon: column; */
+            }
+
+            .txt-div {
+                text-align: center;
+            }
+
+            .main-div-of-name-bill-no {
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                flex-direction: row;
+                width: 100%;
+                border-left: 0;
+                border-right: 0;
+            }
+
+            .main-div-of-bill-date {
+                padding: 13px;
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .bill-no-main-div {
+                gap: 1rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+            }
+
+            .date-main-div {
+                gap: 33px;
+                display: flex;
+                justify-content: center;
+                /* align-items: center; */
+                flex-direction: row;
+            }
+
+            .khadi-line {
+                border: 1px solid black;
+                height: 76px;
+            }
+
+            .current-date {
+                border-bottom: 1px solid #000;
+                width: 150px;
+            }
+
+            .body-table-parent {
+                border: 2px solid black;
+                width: 100%;
+                height: 100vh;
+                height: 100%;
+                display: flex;
+     
+                flex-direction: row;
+            }
+
+            .body-table-right-parent> :nth-child(1)> :nth-child(1) {
+                width: 70%;
+                border-right: 1px solid black !important;
+                border-bottom: 2px solid black !important;
+
+                height: 50px;
+            }
+
+            .body-table-right-parent> :nth-child(1)> :nth-child(2) {
+                width: 30%;
+                border-left: 1px solid black !important;
+                border-bottom: 2px solid black !important;
+                height: 50px;
+            }
+
+            .body-table-right-parent> :nth-child(1) {
+                height: 50px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .body-table-right-parent> :nth-child(2) {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .body-table-right-parent> :nth-child(2)> :nth-child(1) {
+                width: 70%;
+                height: 100%;
+                border-right: 1px solid black !important;
+            }
+
+            .body-table-right-parent> :nth-child(2)> :nth-child(2) {
+                width: 30%;
+                border-left: 1px solid black !important;
+                height: 100%;
+            }
+
+            .body-table-right-parent> :nth-child(3) {
+                height: 50px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .body-table-right-parent> :nth-child(3)> :nth-child(1) {
+                width: 70%;
+                border-right: 1px solid black !important;
+                border-top: 2px solid black !important;
+                height: 50px;
+                padding: 1rem;
+                text-align: end;
+            }
+
+            .body-table-right-parent> :nth-child(3)> :nth-child(2) {
+                width: 30%;
+                border-left: 1px solid black !important;
+                border-top: 2px solid black !important;
+                height: 50px;
+            }
+
+            .body-table-left {
+                padding: 1rem 2rem;
+                width: 75%;
+                height: 100%;
+                border-right: 1px solid black;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+
+            .body-table-left-1 {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 2rem;
+            }
+
+            .body-table-left-2 {
+                width: 100%;
+                height: auto;
+            }
+
+            .ek-down-ek {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 0.6rem;
+            }
+
+            .body-table-right {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+            }
+
+            .body-table-right-div-1 {
+                text-align: end;
+                width: 80%;
+                height: 100%;
+                border-right: 2px solid black;
+            }
+
+            .body-table-right-div-1>span {
+                padding-right: 1rem;
+                font-size: 24px;
+            }
+
+            .body-table-right-div-2 {
+                width: 20%;
+                height: 100%;
+            }
+
+            .body-table-right-div--head {
+                width: 100%;
+                height: 60px;
+                border-bottom: 2px solid black;
+            }
+
+            .body-table-right-parent {
+                display: flex;
+                width: 25%;
+                min-height: 100vh;
+                flex-direction: column;
+                justify-content: space-between;
+                /* gap: 10rem; */
+                border: 1px solid green;
+                align-items: center;
+            }
+
+            .body-left-passengers-div-head {
+                font-weight: 600;
+                width: 100%;
+                font-size: 18px;
+            }
+
+            .body-left-passengers-div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+                height: auto;
+                gap: 0.5rem;
+                /* padding: 2rem; */
+            }
+
+            .body-left-passengers-div-content-repeat {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                flex-direction: row;
+                gap: 0.5rem;
+            }
+
+            .bhai-yaha-data-ayega-name-wala {
+                display: flex;
+                flex-direction: row;
+                /* gap: 16rem; */
+                width: 100%;
+                height: 24px;
+                border-bottom: 1px solid black;
+            }
+
+            .bhai-yaha-data-ayega-gst-wala {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                /* gap: 16rem; */
+                width: 100%;
+                height: 24px;
+                border-bottom: 1px solid black;
+            }
+
+            .bhai-yaha-data-ayega-name-wala-1 {
+                width: 60%;
+                height: 15px;
+                /* border-bottom: 1px solid black; */
+            }
+
+            .bhai-yaha-data-ayega-name-wala-2 {
+                width: 20%;
+                height: 15px;
+                /* border-bottom: 1px solid black; */
+            }
+
+            .bhai-yaha-data-ayega-name-wala-3 {
+                width: 20%;
+                height: 15px;
+                /* border-bottom: 1px solid black; */
+            }
+
+            .bhai-yaha-data-ayega-name-wala-passenger-1 {
+                width: 60%;
+                height: 15px;
+            }
+
+            .bhai-yaha-data-ayega-name-wala-passenger-2 {
+                width: 40%;
+                height: 15px;
+            }
+
+            .bhai-yaha-data-ayega-name-wala-price {
+                width: 90%;
+                height: 24px;
+                font-size: 20px;
+            }
+
+            .body-left-passengers-div-content-repeat>span>span {
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+            .body-left-passengers-div-content {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 0.6rem;
+            }
+
+            .body-left-passengers-div-content-price {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                flex-direction: column;
+                gap: 0.6rem;
+                text-align: end;
+            }
+
+            .body-table-right-bottom {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 120px;
+            }
+
+            .main-div-of-line {
+                display: flex;
+                /* justify-content: center;
+    align-items: center; */
+                flex-direction: row;
+            }
+
+            .div-of-line-1 {
+                border-bottom: 1px solid #000;
+                width: 900px;
+            }
+
+            .div-of-line-2 {
+                border-bottom: 1px solid #000;
+                width: 805px;
+            }
+
+            .div-of-line-3 {
+                border-bottom: 1px solid #000;
+                width: 757px;
+            }
+
+            .div-of-line-4 {
+                border-bottom: 1px solid #000;
+                width: 800px;
+            }
+
+            .second-div-main {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .second-heading {
+                width: 95px;
+                font-size: 13px;
+                font-weight: 900;
+            }
+
+            .first-heading {
+                /* width: 95px; */
+                font-size: 13px;
+                font-weight: 900;
+            }
+
+            .comm-txt {
+                font-size: 13px;
+                font-weight: 900;
+            }
+
+            .third-div-main {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .main-div-of-communication {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .body-left-visa-charges-parent-div {
+                /* border: 1px solid lime; */
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                flex-direction: row;
+                gap: 0.6rem;
+            }
+
+            .body-left-visa-charges-parent-div-price {
+                /* border: 1px solid lime; */
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .body-left-visa-charges-1 {
+                font-size: 18px;
+                font-weight: 600;
+                width: 25%;
+                height: auto;
+            }
+
+            .body-left-visa-charges-2 {
+                width: 75%;
+                height: auto;
+            }
+
+            .body-left-visa-content-repeat>span>span {
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+            .body-left-visa-content-repeat {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 0.6rem;
+            }
+
+            .body-left-rightDash-parent-div {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                flex-direction: row;
+                gap: 0.6rem;
+            }
+
+            .Grand-Total-txt-div {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                font-size: 24px;
+                font-weight: 600;
+            }
+
+            .terms-condition-main-div {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 95%;
+            }
+
+            .div-of-left-side {
+                padding-top: 8px;
+                width: 80%;
+                display: flex;
+                gap: 1rem;
+                justify-content: left;
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .terms-of-payment-txt {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+            }
+
+            .terms-of-payment-txt-detail {
+                width: 60%;
+            }
+
+            .div-of-right-side {
+                /* border: 1px solid lime; */
+                padding-top: 8px;
+                width: 20%;
+                display: flex;
+                gap: 1rem;
+                /* justify-content: left; */
+                /* align-items: flex-start; */
+                flex-direction: column;
+            }
+
+            .first-txt {
+                text-align: end;
+            }
+
+            .scnd-txt {
+                width: 90%;
+                text-align: center;
+            }
+
+            .third-txt {
+                text-align: end;
+            }
+
+            .frst-data {
+                display: flex;
+                position: absolute;
+                top: 20%;
+                right: 10px;
+                flex-direction: column;
+                gap: 14px;
+            }
+
+            .scnd-data {
+                display: flex;
+                position: absolute;
+                top: 50.5%;
+                right: 10px;
+                flex-direction: column;
+                gap: 14px;
+            }
+
+            .frst-scnd-data {
+                position: relative;
+            }
+
+            .position-right-me-lene-ka-hai {
+                position: absolute;
+                right: -100px;
+            }
+
+            .position-right-me-lene-ka-hai-part-2 {
+                position: absolute;
+                right: -204px;
+            }
+        }
+
+    </style>
+
+    <body>
+            <div id="layout-wrapper">
+        {{>header}}
+        {{>sidebar}}
+  
+   <div class="main-content">
+
+            <div class="page-content">
+                < class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                <h4 class="mb-sm-0">Invoice Details</h4>
+
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item active">Invoice Details</li>
+                                    </ol>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+        <div class="form-main-div">
+            <div class="main-div-of-all">
+                <div class="main-header-div">
+                    <div class="main-logo-txt-div">
+                        <div class="img-div">
+                            <img src="/assets/images/sidebarlogo2.png" alt="" />
+                        </div>
+                        <div class="div-of-two-txt">
+                            <div class="logo-txt-1" style="font-family:  'Audiowide', sans-serif;  font-size: 50px; color: #b19042
+
+;
+">Talab</div>
+                            <div class="logo-txt-1" style="font-family: 'Jura', sans-serif; color:#000 ; font: size 20px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            20px;">tours and travels.</div>
+                        </div>
+                    </div>
+                    <div class="main-div-of-details">
+                        <div class="div-of-mobile">Mo. :+91942944126</div>
+                        <div class="div-of-offc-no">Off. No :+91-79-26564878</div>
+                        <div class="div-of-email">
+                            E-mail : talabtoursandtravels@gmail.com
+                        </div>
+                    </div>
+                </div>
+                <div class="main-body-div">
+                    <div class="main-hr-div">
+                        <div class="hr"></div>
+                    </div>
+                    <div class="add-txt-main-div">
+                        <div class="txt-div">
+                            33, UPPER GROUND FLOOR, CITY CENTER, NR. SWASTIK CHAR RASTA,
+                            NAVRANGPURA, AHMEDABAD - 380009.
+                        </div>
+                    </div>
+                    <div class="main-hr-div">
+                        <div class="hr"></div>
+                    </div>
+                    <div class="main-div-of-name-bill-no">
+                        <div class="main-div-of-name">
+                            <div class="name_title_text">
+                                <span class="prmnt-name-div"> M/s. </span>
+                            </div>
+                          <div class="main-div-of-input">
+    <div class="div-of-input-1">
+        <span class="name_teg">{{agent.firstname}}  </span>
+    </div>
+    <div class="div-of-input-2">
+        <span> {{agent.city}}   (GST-{{agent.gst}})</span>
+
+    </div>
+</div>
+
+                        </div>
+                        <div class="khadi-line"></div>
+                        <div class="main-div-of-bill-date">
+                            <div class="bill-no-main-div">
+                                <div class="bill-no-txt-1">Bill No</div>
+                                <div class="bill-no-txt-2">:</div>
+                                <div class="bill-number">{{invoice.id}}</div>
+                            </div>
+                            <div class="date-main-div">
+                                <div class="date-txt-1">Date</div>
+                                <div class="date-txt-2">:</div>
+                                <div class="current-date">{{formattedCreatedAt}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="body-table-parent">
+                    <div class="body-table-left">
+                        <div class="body-table-left-1">
+                            <div class="body-left-passengers-div">
+                                <div class="body-left-passengers-div-head">
+                                    <span>Name of passenger's</span>
+                                </div>
+                                        <div id="body-left-passengers-div-content-id" class="body-left-passengers-div-content">
+  {{#each passportInfoByCountry as |passportInfos country|}}
+    {{#each passportInfos as |passportInfo|}}
+      <div class="body-left-passengers-div-content-repeat">
+                                            <span>
+                                                <span>{{increment @index}}</span>
+                                            </span>
+ <div class="bhai-yaha-data-ayega-name-wala">
+          <div class="bhai-yaha-data-ayega-name-wala-passenger-1">
+            {{passportInfo.passengername}}
+          </div>
+          {{!-- You can add more elements here to display other passport info --}}
+          <div class="bhai-yaha-data-ayega-name-wala-passportnumber">
+            {{passportInfo.passportnumber}}
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  {{/each}}
+                  
+                                    <div class="body-left-passengers-div-content-repeat">
+                               
+                                        {{#each passportCountsByCountry}}
+
+                                            <div class="bhai-yaha-data-ayega-name-wala">
+                                                {{@key}} X {{this}}
+
+                                           
+                                            </div>
+                                        {{/each}}
+
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="body-left-visa-charges-parent-div">
+                                <div class="body-left-visa-charges-1">
+                                    <span>Visa Charges</span>
+                                </div>
+                                <div class="body-left-passengers-div-content" id="body-left-visa-div-content-id">
+                                    {{#each agentServiceCharge}}
+                                        <div class="body-left-passengers-div-content-repeat">
+                                            <span>
+                                                <span>                                                                                    {{increment @index}}
+</span>
+                                            </span>
+
+                                            <div class="bhai-yaha-data-ayega-name-wala">
+                                                <div class="bhai-yaha-data-ayega-name-wala-1">
+                                                    {{this.country}}
+                                                </div>
+                                                <div class="bhai-yaha-data-ayega-name-wala-2">{{this.price}}</div>
+                                                <div class="bhai-yaha-data-ayega-name-wala-3">{{this.totalCount}}</div>
+                                                <div
+                                                    class="bhai-yaha-data-ayega-name-wala-3 position-right-me-lene-ka-hai">
+                                                    {{this.totalAmount}}</div>
+                                            </div>
+
+                                        </div>
+                                    {{/each}}
+                                       </div>
+                            </div>
+                            <div class="body-left-visa-charges-parent-div">
+                                <div class="body-left-visa-charges-1">
+                                 
+                                    <span>Service Charges</span>
+                                </div>
+                                <div class="body-left-passengers-div-content" id="body-left-visa-charges-parent-div"
+                                    style="position: relative;">
+                                    <div class="body-left-passengers-div-content-repeat">
+                                        <span>
+                                            <span>1)</span>
+                                        </span>
+                                        <div class="bhai-yaha-data-ayega-gst-wala"></div>
+                                    </div>
+                                    <div class="body-left-passengers-div-content-repeat">
+                                        <span>
+                                            <span>2)</span>
+                                        </span>
+                                        <div class="bhai-yaha-data-ayega-gst-wala"></div>
+                                    </div>
+                                    <div class="body-left-passengers-div-content-repeat">
+                                        <span>
+                                            <span>3)</span>
+                                        </span>
+                                        <div class="bhai-yaha-data-ayega-gst-wala">Service Charges {{invoice.servicecharge }} X  {{PassportDatacount}} </div>
+                                        <div class="position-right-me-lene-ka-hai-part-2">
+<div>{{serviceCharges }}</div>
+                                        </div>
+                                    </div>
+                                    <div class="body-left-passengers-div-content-repeat">
+                                        <span>
+                                            <span>4)</span>
+                                        </span>
+                                        <h4>
+                                         {{#if invoice.iscash}}
+                                         {{else}}
+                                           <div class="bhai-yaha-data-ayega-gst-wala">
+                                            GST CHARGE 18%     (GST-{{agent.gst}})
+                                        </div>
+                                        <div class="position-right-me-lene-ka-hai-part-2">
+                                            <div>{{gstAmount}}</div>
+                                        </div>
+                                      
+                                        {{/if}}
+                                        </h4>
+                                    </div>
+                                    
+                                    <div class="body-left-passengers-div-content-repeat">
+                                        <span>
+                                            <span>5)</span>
+                                        </span>
+                                        <div class="bhai-yaha-data-ayega-gst-wala"></div>
+                                    </div>
+                                    <div class="body-left-passengers-div-content-repeat">
+                                        <span>
+                                            <span>6)</span>
+                                        </span>
+                                        <div class="bhai-yaha-data-ayega-gst-wala"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="body-left-rightDash-parent-div">
+
+                                <span class="Communication_div">Communication Charges</span>
+                                <div class="Communication_data_div">
+                                    <div class="bhai-yaha-data-ayega-name-wala"></div>
+                                </div>
+                            </div>
+                            <div class="body-left-rightDash-parent-div">
+
+                                <span class="Courier_div">Courier Charges</span>
+                                <div class="Courier_data_div">
+                                    <div class="bhai-yaha-data-ayega-name-wala"></div>
+                                </div>
+                            </div>
+                            <div class="body-left-rightDash-parent-div">
+
+                                <span class="Other_div">Other Charges</span>
+                                <div class="Other_data_div">
+                                    <div class="bhai-yaha-data-ayega-name-wala"></div>
+                                </div>
+                            </div>
+                            <div class="body-left-rightDash-parent-div">
+
+                                <span class="Rupees_div">Rupees</span>
+                                <div class="Rupees_data_div">
+                                    <div class="bhai-yaha-data-ayega-name-wala"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="body-table-left-2">
+                            <div class="Grand-Total-txt-div">
+                                <span> Grand Total </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="body-table-right-parent">
+                        <div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div>
+                            <div class="frst-scnd-data">
+                                <div class="frst-data">
+                                </div>
+                                <div class="scnd-data">
+                             
+                                </div>
+                            </div>
+
+                            <div></div>
+                        </div>
+                        <div>
+                            <div>{{totalAmount}}</div>
+                            <div></div>
+                        </div>
+                         </div>
+                </div>
+            </div>
+            <div class="terms-condition-main-div">
+                <div class="div-of-left-side">
+                    <div class="terms-of-payment-txt">
+                        <h2>TERMS OF PAYMENT</h2>
+                    </div>
+                    <div class="terms-of-payment-txt-detail">
+                        <p>
+                            Cash payments should be made directly to the cashier in our office
+                            Company's printed official receipt duly signed by the cashler must
+                            always be obtained against Payment made in cash or; [p-o., 1I98
+                            Cheque as If will be considered as the only valid document to such
+                            payment Cheque or Demand Draft should be down In favour of Talab
+                            Tours And Travels Private Limited Only '
+                        </p>
+                    </div>
+                </div>
+                <div class="div-of-right-side">
+                    <div class="first-txt">
+                        <h2>E.& O.E.</h2>
+                    </div>
+                    <div class="scnd-txt">
+                        <h3>For.Tours And Travels </h3>
+                    </div>
+                    <div class="third-txt">
+                        <h2>Proprietor</h2>
+                    </div>
+                       <div class="hstack gap-2 justify-content-end d-print-none mt-4">
+                                                <a href="javascript:window.print()" class="btn btn-success"><i class="ri-printer-line align-bottom me-1"></i> Print</a>
+                                                <a href="javascript:void(0);" class="btn btn-primary"><i class="ri-download-2-line align-bottom me-1"></i> Download</a>
+<a href="javascript:void(0);" class="btn btn-primary" id="sendEmailButton" data-invoice-id="1"><i class="ri-download-2-line align-bottom me-1"></i> Send Email</a>
+
+                                            </div>
+
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+</html>
+
+<script>
+  // Function to generate and download PDF
+  async function generatePdf() {
+    try {
+      // Make a request to the server to trigger PDF generation
+      const response = await fetch(`/invoice/generate-pdf/${invoice.id}`);
+      console.log(response,RESPONSE)
+      
+      if (response.ok) {
+        // Convert the response to a Blob
+        const blob = await response.blob();
+
+        // Create a download link and trigger the download
+        const link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        link.download = 'invoice.pdf';
+        link.click();
+      } else {
+        console.error('Error generating PDF:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+    }
+  }
+
+  // Attach click event listener to the button
+  document.getElementById('generatePdfBtn').addEventListener('click', generatePdf);
+  async function generatePdf() {
+  console.log('Button clicked');
+  // Rest of the function...
+}
+</script>
+
+<script>
+    document.getElementById('sendEmailButton').addEventListener('click', function() {
+        // Get the invoice ID from the data attribute
+        var invoiceId = this.getAttribute('data-invoice-id');
+
+        // Make an AJAX request to your Node.js server endpoint (/send-email/:invoiceId)
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '/talab/invoice/send-email/' + invoiceId, true);
+        xhr.send();
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    alert('Email sent successfully!');
+                } else {
+                    alert('Error sending email. Please try again later.');
+                }
+            }
+        };
+    });
+</script>
